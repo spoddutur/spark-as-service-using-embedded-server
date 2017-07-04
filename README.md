@@ -3,11 +3,9 @@ This application comes as Spark2.1-REST-Service-Provider using an embedded, Reac
 
 ## 1. Central Idea
 I wanted to build an interactive REST api service on top of my ApacheSpark application which serves use-cases like:
-```ini
 - **Load the trained model in SparkSession and quickly do the prediction for user given query.**
 - **Have your big-data cached in cluster and provide user an endpoint to query it.**
 - **Run some recurrent spark queries with varying parameters.**
-```
 As you can see that the ```core``` of the application is not primarily a web-application OR browser-interaction but to have REST service performing big-data cluster-computation on ApacheSpark.
 
 ## 2. Akka-HTTP as apt-fit:
@@ -40,6 +38,8 @@ mvn exec:java -Dexec.args="--help"
 OR 
 mvn exec:java -Dexec.args=“-h"
 ```
+
+```ini
 Help content will look something like this:
 This application comes as Spark2.1-REST-Service-Provider using an embedded,
 Reactive-Streams-based, fully asynchronous HTTP server (i.e., using akka-http).
