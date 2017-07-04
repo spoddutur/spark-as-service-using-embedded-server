@@ -59,7 +59,7 @@ Usage: spark-submit spark-as-service-using-embedded-server.jar [options]
 ### 5.2 Tweak Default cmd-line args
 There are 2 ways to change the default param values:
 1. Update ```src/main/resources/application.conf``` file directly. Build and then Run
-2. ```<submit-cmd> --master <master> --name <spark-app-name> --akkaHttpPort <port-to-which-akka-should-listen-to>```
+2. ```mvn exec:java -Dexec.args="--master <master> --name <spark-app-name> --akkaHttpPort <port-to-which-akka-should-listen-to>"```
 
 ## 6. References
 [Akka](http://doc.akka.io/docs/akka-http/current/scala/http/introduction.html)
