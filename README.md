@@ -3,9 +3,10 @@ This application comes as Spark2.1-REST-Service-Provider using an embedded, Reac
 
 ## 1. Central Idea
 I wanted to build an interactive REST api service on top of my ApacheSpark application which serves use-cases like:
-- **Load the trained model in SparkSession and quickly do the prediction for user given query.**
+- _Load the trained model in SparkSession and quickly do the prediction for user given query._
 - **Have your big-data cached in cluster and provide user an endpoint to query it.**
 - **Run some recurrent spark queries with varying parameters.**
+
 As you can see that the ```core``` of the application is not primarily a web-application OR browser-interaction but to have REST service performing big-data cluster-computation on ApacheSpark.
 
 ## 2. Akka-HTTP as apt-fit:
@@ -19,7 +20,7 @@ With Akka-Http, you normally don’t build your application ```on top of``` Akka
 4. **count* - [http://localhost:8001/count](#count) - random spark job to count number of elements in a sequence.
 
 Following picture illustrates the routing of a HttpRequest:
-<img src="https://user-images.githubusercontent.com/22542670/27823530-0b770dc8-60c7-11e7-9b22-c304fe3327fb.png" width="800"/>
+<img src="https://user-images.githubusercontent.com/22542670/27823530-0b770dc8-60c7-11e7-9b22-c304fe3327fb.png" width="700"/>
 
 ## 4. Building
 It uses [Scala 2.11](#scala), [Spark 2.1](#spark) and [Akka-Http](#akka-http)
