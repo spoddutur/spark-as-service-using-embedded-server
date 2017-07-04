@@ -1,13 +1,13 @@
 # spark-as-service-using-embedded-server
-This application comes as Spark2.1-REST-Service-Provider using an embedded, Reactive-Streams-based, fully asynchronous HTTP server
+This application comes as Spark2.1-REST-Service-Provider using an embedded, Reactive-Streams-based, fully asynchronous HTTP server. The core of the application is not primarily a web-application OR browser-interaction but to have REST service performing big-data cluster-computation on ApacheSpark.
 
 ## 1. Central Idea
-
-ApacheSpark is an in-memory big-data cluster computing framework. I wanted to build an interactive REST api service on top of my ApacheSpark application which serves use-cases like:
+I wanted to build an interactive REST api service on top of my ApacheSpark application which serves use-cases like:
+```ini
 - Load the trained model in SparkSession and quickly do the prediction for user given query. 
 - Have your big-data cached in cluster and provide user an endpoint to query it.
 - Run some recurrent spark queries with varying parameters
-
+```
 As you can see that the ```core``` of the application is not primarily a web-application OR browser-interaction but to have REST service performing big-data cluster-computation on ApacheSpark.
 
 ## 2. Akka-HTTP as embedded server:
@@ -17,7 +17,7 @@ I found Akka-HTTP to be right fit for the usecases mentioned above.
 ## 3. Architecture
 Following picture illustrates the workflow of the application
 
-<img src="https://user-images.githubusercontent.com/22542670/27823530-0b770dc8-60c7-11e7-9b22-c304fe3327fb.png" width="400", height="400"/>
+<img src="https://user-images.githubusercontent.com/22542670/27823530-0b770dc8-60c7-11e7-9b22-c304fe3327fb.png" width="400"/>
 
 ### 3.1 Now, you can access following 4 routes:
 1. **homepage** - [http://localhost:8001](#homepage) - says "hello world"
