@@ -36,6 +36,12 @@ Usage: spark-submit spark-as-service-using-embedded-server.jar [options]
   -m, --master <master_url>                    spark://host:port, mesos://host:port, yarn, or local. Default: $sparkMasterDef
   -n, --name <name>                            A name of your application. Default: $sparkAppNameDef
   -p, --akkaHttpPort <portnumber>              Port where akka-http is binded. Default: $akkaHttpPortDef
+
+Configured 4 routes:
+1. homepage - http://host:port - says "hello world"
+2. version - http://host:port/version - tells "spark version"
+3. activeStreams - http://host:port/activeStreams - tells how many spark streams are active currently
+4. count - http://host:port/count - random spark job to count a seq of integers
   """
 
   def parse(list: List[String]): this.type = {
