@@ -49,16 +49,14 @@ and SparkAppName
 Usage: spark-submit spark-as-service-using-embedded-server.jar [options]
   Options:
   -h, --help
-  -m, --master <master_url>                    spark://host:port, mesos://host:port, yarn, or local. Default: $sparkMasterDef
-  -n, --name <name>                            A name of your application. Default: $sparkAppNameDef
-  -p, --akkaHttpPort <portnumber>              Port where akka-http is binded. Default: $akkaHttpPortDef
-
-Configured 4 routes:
-1. homepage - http://host:port - says "hello world"
-2. version - http://host:port/version - tells "spark version"
-3. activeStreams - http://host:port/activeStreams - tells how many spark streams are active currently
-4. count - http://host:port/count - random spark job to count a seq of integers
+  -m, --master <master_url>                    spark://host:port, mesos://host:port, yarn, or local. Default: local
+  -n, --name <name>                            A name of your application. Default: SparkAsRestService
+  -p, --akkaHttpPort <portnumber>              Port where akka-http is binded. Default: 8001
 ```
+### 5.2 Tweak Default cmd-line args
+There are 2 ways to change the default param values:
+1. Update ```src/main/resources/application.conf``` file directly. Build and then Run
+2. ```<submit-cmd> --master <master> --name <spark-app-name> --akkaHttpPort <port-to-which-akka-should-listen-to>```
 
 ## 6. References
 [Akka](http://doc.akka.io/docs/akka-http/current/scala/http/introduction.html)
