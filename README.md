@@ -1,29 +1,28 @@
 # spark-as-service-using-embedded-server
-This application comes as Spark2.1-REST-Service-Provider using an embedded, Reactive-Streams-based, fully asynchronous HTTP server. The core of the application is not primarily a web-application OR browser-interaction but to have REST service performing big-data cluster-computation on ApacheSpark.
+This application comes as Spark2.1-REST-Service-Provider using an embedded, Reactive-Streams-based, fully asynchronous HTTP server.
 
 ## 1. Central Idea
 I wanted to build an interactive REST api service on top of my ApacheSpark application which serves use-cases like:
 ```ini
-- Load the trained model in SparkSession and quickly do the prediction for user given query. 
-- Have your big-data cached in cluster and provide user an endpoint to query it.
-- Run some recurrent spark queries with varying parameters
+- **Load the trained model in SparkSession and quickly do the prediction for user given query.**
+- **Have your big-data cached in cluster and provide user an endpoint to query it.**
+- **Run some recurrent spark queries with varying parameters.**
 ```
 As you can see that the ```core``` of the application is not primarily a web-application OR browser-interaction but to have REST service performing big-data cluster-computation on ApacheSpark.
 
-## 2. Akka-HTTP as embedded server:
-I found Akka-HTTP to be right fit for the usecases mentioned above.
-**Reason**: With Akka-Http, you normally don’t build your application ```on top of``` Akka HTTP, but you build your application on top of whatever makes sense and use Akka HTTP merely for the HTTP integration needs.
+## 2. Akka-HTTP as apt-fit:
+With Akka-Http, you normally don’t build your application ```on top of``` Akka HTTP, but you build your application on top of whatever makes sense and use Akka HTTP merely for the HTTP integration needs. So, I found Akka-HTTP to be right fit for the usecases mentioned above.
 
 ## 3. Architecture
-Following picture illustrates the workflow of the application
-
-<img src="https://user-images.githubusercontent.com/22542670/27823530-0b770dc8-60c7-11e7-9b22-c304fe3327fb.png" width="400"/>
-
-### 3.1 Now, you can access following 4 routes:
+### 3.1 To demo this, I've configured following four routes:
 1. **homepage** - [http://localhost:8001](#homepage) - says "hello world"
 2. **version** - [http://localhost:8001/version](#version) - queries shared SparkSession and tells "spark version"
 3. **activeStreams** - [http://localhost:8001/activeStreams](#activeStreams) - tells how many spark streams are active currently
-4. count - [http://localhost:8001/count](#count) - random spark job to count number of elements in a sequence.
+4. **count* - [http://localhost:8001/count](#count) - random spark job to count number of elements in a sequence.
+
+Following picture illustrates the routing of a HttpRequest:
+<img src="https://user-images.githubusercontent.com/22542670/27823530-0b770dc8-60c7-11e7-9b22-c304fe3327fb.png" width="800"/>
+
 ## 4. Building
 It uses [Scala 2.11](#scala), [Spark 2.1](#spark) and [Akka-Http](#akka-http)
 ```markdown
