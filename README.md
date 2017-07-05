@@ -22,7 +22,7 @@ With Akka-Http, you normally don’t build your application ```on top of``` Akka
 4. **count** - [http://localhost:8001/count](#count) - random spark job to count number of elements in a sequence.
 
 Following picture illustrates the routing of a HttpRequest:
-<img src="https://user-images.githubusercontent.com/22542670/27823530-0b770dc8-60c7-11e7-9b22-c304fe3327fb.png" width="700"/>
+<img src="https://user-images.githubusercontent.com/22542670/27865894-ee70d42a-61b1-11e7-9595-02b845a9ffae.png" width="700"/>
 
 ## 4. Building
 It uses [Scala 2.11](#scala), [Spark 2.1](#spark) and [Akka-Http](#akka-http)
